@@ -1,8 +1,7 @@
 require './spec_helper'
 require 'rack/test'
-require '../lib/application'
 
-RSpec.describe '/healthz' do
+RSpec.describe 'GET /healthz' do
   include Rack::Test::Methods
 
   let(:app) { Application }
