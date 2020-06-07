@@ -1,4 +1,4 @@
-require './spec_helper'
+require './spec/spec_helper'
 require 'rack/test'
 
 RSpec.describe 'GET /shopping_list' do
