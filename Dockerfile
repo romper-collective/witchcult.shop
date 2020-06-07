@@ -12,4 +12,4 @@ ENV BUNDLE_JOBS=4
 RUN bundle install
 COPY . ./
 
-CMD ["bundle", "exec", "rackup"]
+CMD ["bundle", "exec", "rackup", "-o", "0.0.0.0", "-p", "9000"]
