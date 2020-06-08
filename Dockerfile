@@ -1,7 +1,7 @@
 FROM ruby:2.7-alpine
 
 RUN apk update && \
-    apk add build-base libc-dev git
+    apk add build-base libc-dev git postgresql postgresql-dev
 
 RUN gem update bundler
 
@@ -12,4 +12,4 @@ ENV BUNDLE_JOBS=4
 RUN bundle install
 COPY . ./
 
-CMD ["bundle", "exec", "rackup", "-o", "0.0.0.0", "-p", "9000"]
+CMD ["bin/witchcult-shop.sh"]
