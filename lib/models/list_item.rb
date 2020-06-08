@@ -1,2 +1,2 @@
-class ListItem # < Sequel::Model
+class ListItem < Sequel::Model
 end

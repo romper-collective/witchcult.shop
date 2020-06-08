@@ -5,7 +5,6 @@ RSpec.describe ListItem do
 
   describe '.create' do
     it 'creates a list item' do
-      pending 'need to connec to database'
       expect { described_class.create(name: 'cheese sticks') }
         .to change { described_class.count }
         .from(0)
