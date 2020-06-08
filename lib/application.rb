@@ -4,6 +4,10 @@ require "#{settings.root}/initializer"
 Dir.glob("#{settings.root}/models/**/*").each { |path| require(path) }
 
 class Application < Sinatra::Base
+  get '/' do
+    redirect '/shopping_list'
+  end
+
   get '/healthz' do
     'Ok!'
   end
