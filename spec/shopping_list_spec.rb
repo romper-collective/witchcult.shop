@@ -13,8 +13,6 @@ RSpec.describe 'GET /shopping_list' do
     let(:list_item_names) { ['cheese sticks', 'bubbles'] }
 
     it 'gives a list of the items' do
-      pending 'we are still working on setting up a database'
-
       list_item_names.each { |name| ListItem.create(name: name) }
 
       get '/shopping_list'

@@ -9,6 +9,6 @@ class Application < Sinatra::Base
   end
 
   get '/shopping_list' do
-    'cheese sticks'
+    ListItem.all.map(&:name).join("\n")
   end
 end
