@@ -6,8 +6,15 @@ RSpec.describe 'GET /shopping_list' do
 
   let(:app) { Application }
 
-  it 'returns 200'
-  it 'gives an empty shopping list'
+  it 'returns 200' do
+    get '/shopping_list'
+    expect(last_response.status).to eq 200
+  end
+
+  it 'gives an empty shopping list' do
+    get '/shopping_list'
+    expect(ListItem.all).to be_empty
+  end
 
   context 'with some list items' do
     let(:list_item_names) { ['cheese sticks', 'bubbles'] }
