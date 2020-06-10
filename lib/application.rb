@@ -13,6 +13,7 @@ class Application < Sinatra::Base
   end
 
   get '/shopping_list' do
-    ListItem.all.map(&:name).join("\n")
+    @list_items = ListItem.all.map(&:name)
+    erb :shopping_list
   end
 end
