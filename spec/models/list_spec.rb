@@ -1,7 +1,7 @@
 require './spec/spec_helper'
 
 RSpec.describe List do
-  subject(:list) { described_class.new }
+  subject(:list) { described_class.create }
 
   describe '#name' do
     let(:name) { 'my list' }
@@ -14,7 +14,7 @@ RSpec.describe List do
     end
 
     context 'when the name is defined on initialization' do
-      subject(:list) { described_class.new(name: name) }
+      subject(:list) { described_class.create(name: name) }
 
       it { is_expected.to have_attributes name: name }
     end
@@ -27,7 +27,7 @@ RSpec.describe List do
     end
 
     it 'can assign multiple list items' do
-      expect { items.each { |i| list.list_items << i } }
+      expect { items.each { |i| list.add_list_item(i) } }
         .to change { list.list_items }
         .from(be_empty)
         .to contain_exactly(*items)
