@@ -8,7 +8,7 @@
     </form>
     <ul class="witchcult-list" id=<%= @list.slug %>>
       <% @list.list_items.each do |item| %>
-      <li class="witchcult-list-item"><%= item.name %></li>
+      <li class="witchcult-list-item" id=<%= "#{@list.slug}_#{item.slug}" %>><%= item.name %></li>
       <% end %>
     </ul>
   </body>
