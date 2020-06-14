@@ -39,3 +39,17 @@ RSpec.describe 'GET /shopping_list' do
     end
   end
 end
+
+RSpec.describe 'POST /shopping_list' do
+  include Rack::Test::Methods
+
+  let(:app) { Application }
+
+  it 'adds the name of the item to the shopping list' do
+    get '/shopping_list'
+    expect(last_response.body).not_to include('cheese sticks')
+    post '/shopping_list', { name: 'cheese sticks' }
+    follow_redirect!
+    expect(last_response.body).to include('cheese sticks')
+  end
+end
