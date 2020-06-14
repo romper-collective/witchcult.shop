@@ -16,6 +16,8 @@ docker-compose build
 docker-compose up
 ```
 
+You can now get an application console with `docker-compose exec web racksh`.
+
 ### Running the tests
 
 To run the tests in a docker-compose environment, do:
