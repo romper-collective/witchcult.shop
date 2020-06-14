@@ -1,7 +1,7 @@
 FROM ruby:2.7-alpine
 
 RUN apk update && \
-    apk add build-base libc-dev git postgresql postgresql-dev
+    apk add bash build-base libc-dev git postgresql postgresql-dev
 
 RUN gem update bundler
 
