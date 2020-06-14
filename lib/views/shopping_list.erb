@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Shopping List</h1>
+    <h1><%= @list.name %></h1>
     <ul>
-      <% @list_items.each do |item| %>
+      <% @list.list_items.each do |item| %>
       <li><%= item.name %></li>
       <% end %>
     </ul>
