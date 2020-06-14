@@ -6,9 +6,9 @@
       <p>Add new item: <input type="text" name="name"></p>
       <button id="new_item" type="submit">Add item</button>
     </form>
-    <ul>
+    <ul class="witchcult-list" id=<%= @list.slug %>>
       <% @list.list_items.each do |item| %>
-      <li><%= item.name %></li>
+      <li class="witchcult-list-item"><%= item.name %></li>
       <% end %>
     </ul>
   </body>
