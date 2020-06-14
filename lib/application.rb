@@ -13,8 +13,7 @@ class Application < Sinatra::Base
   end
 
   get '/shopping_list' do
-    list = List.find_or_create(name: 'Shopping List')
-    @list_items = list.list_items
+    @list = List.find_or_create(name: 'Shopping List')
     erb :shopping_list
   end
 end
