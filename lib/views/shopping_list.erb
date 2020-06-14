@@ -2,6 +2,10 @@
 <html>
   <body>
     <h1><%= @list.name %></h1>
+    <form method="POST" action"/shopping_list">
+      <p>Add new item: <input type="text" name="name"></p>
+      <button id="new_item" type="submit">Add item</button>
+    </form>
     <ul>
       <% @list.list_items.each do |item| %>
       <li><%= item.name %></li>
