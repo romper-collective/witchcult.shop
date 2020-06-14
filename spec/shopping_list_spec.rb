@@ -27,7 +27,7 @@ RSpec.describe 'GET /shopping_list' do
 
     before do
       list_item_names.each do |name|
-        list.list_items << ListItem.create(name: name)
+        list.add_list_item(ListItem.create(name: name))
       end
       ListItem.create(name: 'not in shopping list')
     end
