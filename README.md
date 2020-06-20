@@ -1,5 +1,7 @@
 # witchcult.shop
 
+[![build status](https://github.com/romper-collective/witchcult.shop/workflows/RSpec/badge.svg)](https://github.com/romper-collective/witchcult.shop/actions)
+
 ## Development
 
 Run the server with:
