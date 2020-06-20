@@ -1,3 +1,9 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
 name: 'RSpec'
 description: 'Run test suite for CI.'
 runs:
