@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: noreplyucsb/witchcult.shop
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
