@@ -61,3 +61,7 @@ Create the name of the service account to use
     {{ default "default" .Values.serviceAccount.name }}
 {{- end -}}
 {{- end -}}
+
+{{- define "witchcult.shop.postgresql.fullname" -}}
+{{- printf "%s-%s" .Release.Name "database" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
