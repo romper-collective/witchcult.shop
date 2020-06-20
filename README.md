@@ -29,3 +29,15 @@ docker-compose build
 docker-compose up -d
 docker-compose exec web bundle exec rspec
 ```
+
+### Deployment
+
+This application includes a [`helm`][helm] chart for deployment to Kubernetes
+clusters. If you have `kubectl` and Helm 3 installed and a cluster configured,
+you can deploy with:
+
+```sh
+helm install [name] ./chart/witchcult.shop
+```
+
+[helm]: https://helm.sh
