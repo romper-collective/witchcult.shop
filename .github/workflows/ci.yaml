@@ -1,0 +1,7 @@
+name: 'RSpec'
+description: 'Run test suite for CI.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - 'bundle exec rspec'
