@@ -1,0 +1,14 @@
+on: [push, pull_request]
+
+name: 'RSpec'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build the docker-compose stack
+      run: docker-compose up -d
+    - name: Run database migrations
+      run: docker-compose exec -T web bundle exec sequel -m ./migrations postgres://psql:postgres-devel@postgres:5432/witchcult-shops
+    - name: Run RSpec
+      run: docker-compose exec -T web bundle exec rspec
