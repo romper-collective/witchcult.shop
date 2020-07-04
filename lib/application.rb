@@ -23,9 +23,13 @@ class Application < Sinatra::Base
   end
 
   post '/shopping_list' do
-    List.find_or_create(name: 'Shopping List')
-      .add_list_item(ListItem.create(name: params[:name]))
     logger.info params
+    if params.key? :name
+      List.find_or_create(name: 'Shopping List')
+        .add_list_item(ListItem.create(name: params[:name]))
+    else
+      logger.info "I'm checking off an item!"
+    end
     redirect '/shopping_list'
   end
 end
