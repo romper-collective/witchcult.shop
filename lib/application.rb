@@ -5,6 +5,10 @@ Dir.glob("#{settings.root}/decorators/**/*").each { |path| require(path) }
 Dir.glob("#{settings.root}/models/**/*").each { |path| require(path) }
 
 class Application < Sinatra::Base
+  configure :production, :development do
+    enable :logging
+  end
+
   get '/' do
     redirect '/shopping_list'
   end
@@ -21,6 +25,7 @@ class Application < Sinatra::Base
   post '/shopping_list' do
     List.find_or_create(name: 'Shopping List')
       .add_list_item(ListItem.create(name: params[:name]))
+    logger.info params
     redirect '/shopping_list'
   end
 end
