@@ -6,13 +6,15 @@
       <p>Add new item: <input type="text" name="name"></p>
       <button id="new_item" type="submit">Add item</button>
     </form>
-    <ul class="witchcult-list" id=<%= @list.slug %>>
-      <% @list.list_items.each do |item| %>
-      <li class="witchcult-list-item" id=<%= "#{@list.slug}_#{item.slug}" %>>
-        <input type="checkbox" id=<%="#{@list.slug}_#{item.slug}_checkbox"%> name=<%="#{item.slug}"%>>
-        <label for=<%="#{@list.slug}_#{item.slug}_checkbox"%>><%= item.name %></label>
-      </li>
-      <% end %>
-    </ul>
+    <form method="POST" action="/shopping_list">
+      <ul class="witchcult-list" id=<%= @list.slug %>>
+        <% @list.list_items.each do |item| %>
+        <li class="witchcult-list-item" id=<%= "#{@list.slug}_#{item.slug}" %>>
+          <input type="checkbox" id=<%="#{@list.slug}_#{item.slug}_checkbox"%> name=<%="#{item.slug}"%> onChange="this.form.submit()">
+          <label for=<%="#{@list.slug}_#{item.slug}_checkbox"%>><%= item.name %></label>
+        </li>
+        <% end %>
+      </ul>
+    </form>
   </body>
 </html>
