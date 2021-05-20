@@ -5,7 +5,7 @@ source "https://rubygems.org"
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem 'database_cleaner-sequel', '~> 1.8', group: %w[test]
-gem 'puma', '~> 4.3.5'
+gem 'puma', '~> 4.3.8'
 gem 'sequel', '~> 5.33'
 gem 'sinatra', '~> 2.0.8'
 gem 'racksh', '~> 1.0'
