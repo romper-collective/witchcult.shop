@@ -10,12 +10,12 @@ GEM
     method_source (1.0.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    nio4r (2.5.2)
+    nio4r (2.5.7)
     pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    puma (4.3.5)
+    puma (4.3.8)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-protection (2.0.8.1)
@@ -54,7 +54,7 @@ DEPENDENCIES
   database_cleaner-sequel (~> 1.8)
   pg (~> 1.2)
   pry
-  puma (~> 4.3.5)
+  puma (~> 4.3.8)
   rack-test
   racksh (~> 1.0)
   rspec (~> 3.9)
